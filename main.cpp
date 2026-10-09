@@ -19,7 +19,6 @@ Input Validation: Think about what legal values the program should accept for mo
 
 #include <iostream>
 #include <iomanip>
-#include <string>
 
 using namespace std;
 
@@ -63,11 +62,13 @@ int main() {
 
     if (year < 0 || year > 99) {
         cout << "Invalid year. Please restart" << endl;
+        return 0;
     }
 
     // Feb 29 is invalid if not a leap year (every 4 yrs)
     if (month == 2 && day == 29 &&  year%4 != 0) {
         cout << "Invalid year. This is not a leap year. Please restart" << endl;
+        return 0;
     }
 
     // ---- MAGIC ---- //
